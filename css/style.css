@@ -1,0 +1,20 @@
+body {
+        background: url(../images/home-tab-content-bg.png) no-repeat  #0b7ba8;
+}
+
+.container-fluid {
+        background: #ffffff;
+        border-color: green;
+        border-style: double;
+        width: 75%;
+        margin: auto;
+        text-align: center;
+        color: #0b7ba8;       
+}
+
+#logo {
+        margin-top: 5px;
+        position: relative;
+        margin-right: 790px;
+        padding: 10px;
+}
