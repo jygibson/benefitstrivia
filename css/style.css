@@ -7,6 +7,7 @@ body {
         border-color: green;
         border-style: double;
         width: 75%;
+        height: 75%;
         margin: auto;
         text-align: center;
         color: #0b7ba8;       
@@ -16,5 +17,10 @@ body {
         margin-top: 5px;
         position: relative;
         margin-right: 790px;
+        margin-bottom: 20px;
         padding: 10px;
+}
+
+h5 {
+        font-size: 18px;
 }
