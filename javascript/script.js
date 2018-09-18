@@ -2,7 +2,7 @@
 $(document).ready(function () {
     console.log("this blows");
     //     //event: user presses start button
-    var integer = 10;
+    var integer = 60;
     var intervalId;
 
     $(".game").toggle();
@@ -12,6 +12,7 @@ $(document).ready(function () {
 
     $("#button").on("click", beginGame);
     $("#button2").on("click", stop);
+    $("#button3").on("click", beginGame);
 
     function beginGame() {
         clearInterval(intervalId);
@@ -38,15 +39,25 @@ $(document).ready(function () {
     var correct = 0;
     var wrong = 0;
     var blank = 0;
-    var userChoice = $("input:checked").val()
 
     $("#right").text(correct)
     $("#wrong").text(wrong)
     $("#blank").text(blank)
 
-if (userChoice === $("input[value=correct]")){
-    correct++;
-}
+    console.log(correct);
+
+    var userChoice = $("input[id=answeroption]:checked").val()
+    var correctAnswer = $("input[value=correct]:checked").val()
+    var wrongAnswer = $("input[value=wrong]:checked").val()
+
+    if (userChoice = correctAnswer) {
+        correct++;
+        console.log(correct);
+    }
+    else if (userChoice = wrongAnswer){
+        wrong++;
+        console.log(wrong);
+    }
 
 
 
