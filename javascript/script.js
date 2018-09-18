@@ -38,13 +38,15 @@ $(document).ready(function () {
     var correct = 0;
     var wrong = 0;
     var blank = 0;
-    var userChoice = $(".game").click("#answeroption")
+    var userChoice = $("input:checked").val()
 
     $("#right").text(correct)
     $("#wrong").text(wrong)
     $("#blank").text(blank)
 
-    // $("#button2").on("click", stop)
+if (userChoice === $("input[value=correct]")){
+    correct++;
+}
 
 
 
