@@ -40,15 +40,12 @@ $(document).ready(function () {
     var wrong = 0;
     var blank = 0;
 
-    $("#right").text(correct)
-    $("#wrong").text(wrong)
-    $("#blank").text(blank)
 
     console.log(correct);
 
-    var userChoice = $("input[id=answeroption]:checked").val()
-    var correctAnswer = $("input[value=correct]:checked").val()
-    var wrongAnswer = $("input[value=wrong]:checked").val()
+    var userChoice = $("input[id=answeroption]:checked")
+    var correctAnswer = $("input[value=correct]:checked")
+    var wrongAnswer = $("input[value=wrong]:checked")
 
     if (userChoice = correctAnswer) {
         correct++;
@@ -59,6 +56,9 @@ $(document).ready(function () {
         console.log(wrong);
     }
 
+    $("#right").text(correct)
+    $("#wrong").text(wrong)
+    $("#blank").text(blank)
 
 
     //when start button is pressed, question and answer choices load, start button disappears, and timer begins counting down
