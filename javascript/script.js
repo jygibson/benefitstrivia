@@ -43,7 +43,7 @@ $(document).ready(function () {
 
     console.log(correct);
 
-    var userChoice = $("input[id=answeroption]:checked")
+    var userChoice = $("input:checked")
     var correctAnswer = $("input[value=correct]:checked")
     var wrongAnswer = $("input[value=wrong]:checked")
 
