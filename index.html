@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>How Well Do You Know Your Benefits?</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
@@ -21,19 +22,63 @@
 
         <h3>How well do you know your plans?</h3>
 
-        <button id = "button" type="button" class="btn btn-info btn-lg">Start!</button>
+        <button id="button" type="button" class="btn btn-info btn-lg">Start!</button>
 
-        <div class="full-game">
-        <p class="countdown">Time Remaining: <span id="timer"></span> </p>
+        <div class="timer">
+            <p class="countdown">Time Remaining: <span id="timer"></span> </p>
+        </div>
 
+        <div class="questions">
+            <div class="q1">
+                <p id="quest1">Our medical plans are what type of plans?</p>
+                <input type="radio" name="answer" value="CDHP"> CDHP: Consumer Driven Health Plan<br>
+                <input type="radio" name="answer" value="HDHP"> HDHP: High Deductible Health Plan<br>
+                <input type="radio" name="answer" value="PPO"> PPO: Preferred Provider Organization<br>
+                <input type="radio" name="answer" value="All"> All of the Above
+            </div>
+            <div class="q2">
+                <p id="quest2">What are the benefits of a HDHP?</p>
+                <input type="radio" name="answer" value="premiums"> Premiums are much lower <br>
+                <input type="radio" name="answer" value="hsas"> You are eligible for a Health Savings Account<br>
+                <input type="radio" name="answer" value="wellness"> HDHPs encourage participants to be mindful about their
+                wellness<br>
+                <input type="radio" name="answer" value="shop"> You can shop around for less expensive providers and services
+                <input type="radio" name="answer" value="all"> All of the Above
+            </div>
+            <div class="q3">
+                <p id="quest3">Pretend you're at the doctor for your annual physical. The receptionist would like you to
+                    pay a $20 co-pay.What do you do?"?</p>
+                <input type="radio" name="answer" value="pay"> Pay the $20.00 co-pay. <br>
+                <input type="radio" name="answer" value="hsa"> Use your HSA to pay the $20.00 co-pay.<br>
+                <input type="radio" name="answer" value="inform"> Let the receptionist know that annual physicals are preventive
+                care and covered at 100%.
+            </div>
+            <div class="q4">
+                <p id="quest4">Pretend you're at the doctor for a sick visit. The receptionist would like you to pay a $20
+                    co-pay.What do you do??</p>
+                <input type="radio" name="answer" value="pay"> Pay the $20.00 co-pay. <br>
+                <input type="radio" name="answer" value="hsa"> Use your HSA to pay the $20.00 co-pay.<br>
+                <input type="radio" name="answer" value="inform"> Let the receptionist know that you have a high deductible
+                health plan and the charge should be processed through insurance before you are billed.
+            </div>
+            <div class="q5">
+                <p id="quest5">What are the benefits of a Health Savings Account?</p>
+                <input type="radio" name="answer" value="pretax">The money goes in pre-tax, which while it makes your take
+                home pay smaller, it's a smaller amount to be taxed.<br>
+                <input type="radio" name="answer" value="savings"> It's your own savings account, you can keep it forever
+                -- even use it in retirement too!<br>
+                <input type="radio" name="answer" value="invest"> Once your balance reaches $1,000, you can invest the money,
+                and all dividends are tax free.<br>
+                <input type="radio" name="answer" value="help"> Once you have a balance, an HSA can help ease the burden
+                on your wallet created by the larger deductibles. <br>
+                <input type="radio" name="answer" value="all"> All of the above
+            </div>
 
-
+            <button id="button2" type="button" class="btn btn-info btn-lg">Done!</button>
         </div>
 
 
     </div>
-
-
 
 
     <script src="javascript/script.js"></script>
