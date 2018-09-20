@@ -2,8 +2,10 @@
 $(document).ready(function () {
     console.log("this blows");
     //     //event: user presses start button
-    var integer = 60;
+    var integer = 20;
     var intervalId;
+    var correctAnswer = 0;
+    var wrongAnswer = 0;
 
     $(".game").toggle();
     $(".timer").toggle();
@@ -13,6 +15,7 @@ $(document).ready(function () {
     $("#button").on("click", beginGame);
     $("#button2").on("click", stop);
     $("#button3").on("click", beginGame);
+
 
     function beginGame() {
         clearInterval(intervalId);
@@ -36,36 +39,29 @@ $(document).ready(function () {
         $(".timeupPage").toggle();
     }
 
-    var correct = 0;
-    var wrong = 0;
-    var blank = 0;
+    // $("#right").text(correctAnswer)
+    // $("#wrong").text(wrongAnswer)
+
+    $("#button2").on("click", function () {
+        $("input[type=radio]:checked").each(function () {
+            console.log($(this).val())
+            if ($(this).val() === "correct") {
+                correctAnswer++;
+            }
+            else if ($(this).val() === "wrong") {
+                wrongAnswer++;
+            }
+            var blank = (5 - (correctAnswer + wrongAnswer))
+            $("#right").text(correctAnswer)
+            $("#wrong").text(wrongAnswer)
+            $("#blank").text(blank)
 
 
-    console.log(correct);
-
-    var userChoice = $("input:checked")
-    var correctAnswer = $("input[value=correct]:checked")
-    var wrongAnswer = $("input[value=wrong]:checked")
-
-    if (userChoice = correctAnswer) {
-        correct++;
-        console.log(correct);
-    }
-    else if (userChoice = wrongAnswer){
-        wrong++;
-        console.log(wrong);
-    }
-
-    $("#right").text(correct)
-    $("#wrong").text(wrong)
-    $("#blank").text(blank)
+            //click event on done button, create a function to evaluate all the questions at the end
+            //call stop function within this function
+            // user input checked whatever should say .val()
 
 
-    //when start button is pressed, question and answer choices load, start button disappears, and timer begins counting down
-    //the user selects their answer (need to take data from user choice and compare to correct answer)
-    //if answer is correct, the right answer page loads. after 5 seconds, it automatically loads the next question
-    //if answer is incorrect, the wrong answer page loads. after 5 seconds, it automatically loads the next question
-    //at the end of the questions, the end page will load. it contains # of correct answers and # of incorrect answers.
-    //has a start over button that begins the quiz over, but does not reload the DOM
-
-})
+        });
+    })
+});
