@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     $("#button").on("click", beginGame);
     $("#button2").on("click", stop);
-    $("#button3").on("click", beginGame);
+    $("#button3").on("click", startOver);
 
 
     function beginGame() {
@@ -23,6 +23,21 @@ $(document).ready(function () {
         $("#button").toggle();
         $(".timer").toggle();
         $(".game").toggle();
+
+    }
+
+    function startOver() {
+        $('.game').find('input:radio').prop('checked', false);
+        integer = 20;
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement, 1000);
+        $("#button").show();
+        $(".timer").hide();
+        $(".game").hide();
+        $(".timeupPage").hide();
+        correctAnswer = 0;
+        wrongAnswer = 0;
+
     }
 
     function decrement() {
@@ -34,16 +49,10 @@ $(document).ready(function () {
     }
 
     function stop() {
-        clearInterval(intervalId);
         $(".game").toggle();
         $(".timeupPage").toggle();
-    }
-
-    // $("#right").text(correctAnswer)
-    // $("#wrong").text(wrongAnswer)
-
-    $("#button2").on("click", function () {
         $("input[type=radio]:checked").each(function () {
+            clearInterval(intervalId);
             console.log($(this).val())
             if ($(this).val() === "correct") {
                 correctAnswer++;
@@ -56,12 +65,25 @@ $(document).ready(function () {
             $("#wrong").text(wrongAnswer)
             $("#blank").text(blank)
 
-
-            //click event on done button, create a function to evaluate all the questions at the end
-            //call stop function within this function
-            // user input checked whatever should say .val()
+        })
+    }
 
 
-        });
-    })
-});
+    // $("#button2").on("click", function () {
+    //     $("input[type=radio]:checked").each(function () {
+    //         console.log($(this).val())
+    //         if ($(this).val() === "correct") {
+    //             correctAnswer++;
+    //         }
+    //         else if ($(this).val() === "wrong") {
+    //             wrongAnswer++;
+    //         }
+    //         var blank = (5 - (correctAnswer + wrongAnswer))
+    //         $("#right").text(correctAnswer)
+    //         $("#wrong").text(wrongAnswer)
+    //         $("#blank").text(blank)
+
+    //     });
+
+    // })
+})
