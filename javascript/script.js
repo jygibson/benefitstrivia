@@ -2,7 +2,7 @@
 $(document).ready(function () {
     console.log("this blows");
     //     //event: user presses start button
-    var integer = 20;
+    var integer = 120;
     var intervalId;
     var correctAnswer = 0;
     var wrongAnswer = 0;
@@ -28,7 +28,7 @@ $(document).ready(function () {
 
     function startOver() {
         $('.game').find('input:radio').prop('checked', false);
-        integer = 20;
+        integer = 120;
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 1000);
         $("#button").show();
@@ -49,10 +49,10 @@ $(document).ready(function () {
     }
 
     function stop() {
+        clearInterval(intervalId);
         $(".game").toggle();
         $(".timeupPage").toggle();
         $("input[type=radio]:checked").each(function () {
-            clearInterval(intervalId);
             console.log($(this).val())
             if ($(this).val() === "correct") {
                 correctAnswer++;
@@ -68,22 +68,4 @@ $(document).ready(function () {
         })
     }
 
-
-    // $("#button2").on("click", function () {
-    //     $("input[type=radio]:checked").each(function () {
-    //         console.log($(this).val())
-    //         if ($(this).val() === "correct") {
-    //             correctAnswer++;
-    //         }
-    //         else if ($(this).val() === "wrong") {
-    //             wrongAnswer++;
-    //         }
-    //         var blank = (5 - (correctAnswer + wrongAnswer))
-    //         $("#right").text(correctAnswer)
-    //         $("#wrong").text(wrongAnswer)
-    //         $("#blank").text(blank)
-
-    //     });
-
-    // })
 })
