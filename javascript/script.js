@@ -1,6 +1,6 @@
 // //nothing runs until html finishes loaded
 $(document).ready(function () {
-    console.log("this blows");
+    console.log("testing");
     //     //event: user presses start button
     var integer = 120;
     var intervalId;
